@@ -1,0 +1,67 @@
+{
+	"_from": "git+ssh://git@github.com/ff0000-ad-tech/cs-plugin-vendor-ft.git",
+	"_id": "@ff0000-ad-tech/cs-plugin-vendor-ft@1.0.0",
+	"_inBundle": false,
+	"_location": "/@ff0000-ad-tech/cs-plugin-vendor-ft",
+	"_phantomChildren": {
+		"escape-string-regexp": "1.0.5",
+		"ms": "2.0.0"
+	},
+	"_requested": {
+		"type": "git",
+		"raw": "@ff0000-ad-tech/cs-plugin-vendor-ft@git+ssh://git@github.com/ff0000-ad-tech/cs-plugin-vendor-ft.git",
+		"name": "@ff0000-ad-tech/cs-plugin-vendor-ft",
+		"escapedName": "@ff0000-ad-tech%2fcs-plugin-vendor-ft",
+		"scope": "@ff0000-ad-tech",
+		"rawSpec": "git+ssh://git@github.com/ff0000-ad-tech/cs-plugin-vendor-ft.git",
+		"saveSpec": "git+ssh://git@github.com/ff0000-ad-tech/cs-plugin-vendor-ft.git",
+		"fetchSpec": "ssh://git@github.com/ff0000-ad-tech/cs-plugin-vendor-ft.git",
+		"gitCommittish": null
+	},
+	"_requiredBy": ["/"],
+	"_resolved": "git+ssh://git@github.com/ff0000-ad-tech/cs-plugin-vendor-ft.git#90a8976ebb7539dbf891df717123e25594597a79",
+	"_spec": "@ff0000-ad-tech/cs-plugin-vendor-ft@git+ssh://git@github.com/ff0000-ad-tech/cs-plugin-vendor-ft.git",
+	"_where": "/Users/kenny.arehart/Documents/_CLIENTS/ESPN/ESPN_MLB_2018/ES6/regular_season_clone_vendor",
+	"author": {
+		"name": "RED Interactive Agency"
+	},
+	"bugs": {
+		"url": "https://github.com/ff0000-ad-tech/cs-plugin-vendor-ft/issues"
+	},
+	"bundleDependencies": false,
+	"dependencies": {
+		"@ff0000-ad-tech/debug": "latest",
+		"fs-extra": "^5.0.0",
+		"jszip": "^3.1.5",
+		"minimist": "^1.2.0",
+		"walk": "^2.3.9"
+	},
+	"deprecated": false,
+	"description": "Creative Server Plugin - Vendor Container 2.0 ===============",
+	"devDependencies": {},
+	"homepage": "https://github.com/ff0000-ad-tech/cs-plugin-vendor-ft#readme",
+	"license": "MIT",
+	"main": "index.js",
+	"name": "@ff0000-ad-tech/cs-plugin-vendor-ft",
+	"publishConfig": {
+		"access": "public"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ff0000-ad-tech/cs-plugin-vendor-ft.git"
+	},
+	"scripts": {
+		"pub": "np"
+	},
+	"version": "1.0.0",
+	"wp-creative-server": {
+		"routes": {
+			"api": "./index.js"
+		},
+		"hooks": {
+			"bulk-control": {
+				"Vendor C2.0": "/api/?cmd=vendor-c20"
+			}
+		}
+	}
+}
