@@ -8,10 +8,13 @@ global.api = `http://${argv.api}`
 
 switch (argv.cmd) {
 	case 'vendor-ft':
-		log(argv.profile)
+		log(argv)
+		log('argv.profile:', argv.profile)
 		const targets = JSON.parse(argv.targets)
-		log(targets)
-		packager.createVendorPackage(argv.profile, targets)
+		log('targets:', targets)
+		const folders = JSON.parse(argv.folders)
+		log('folders:', folders)
+		packager.createVendorPackage(argv.profile, folders, targets)
 		break
 }
 

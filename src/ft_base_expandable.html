@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta content="utf-8" http-equiv="encoding">
+    <style>
+        html,
+        body {
+            margin: 0;
+        }
+
+        #richload-base {
+            width: 970px;
+            height: 33px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        #richload-expand {
+            display: none;
+            height: 250px;
+            width: 970px;
+        }
+    </style>
+</head>
+
+<body>
+    <ft-richload name="richloadBase" id="richload-base"></ft-richload>
+    <div id="richload-expand"></div>
+
+    <script src="http://cdn.flashtalking.com/frameworks/js/api/2/9/html5API.js"></script>
+    <script>
+        var myFT = new FT;
+
+        var richloadBase = myFT.$("#richload-base");
+        var richloadExpand = myFT.$("#richload-expand");
+
+        // handle expand
+        var hasExpandLoaded = false;
+        myFT.on('expand', function () {
+            richloadExpand[0].style.display = "block";
+            // initial load
+            if (!hasExpandLoaded) {
+                hasExpandLoaded = true;
+                myFT.insertRichLoad({
+                    parent: richloadExpand,
+                    richLoad: "richloadExpand"
+                });
+            }
+            // user-initiated expand
+            else {
+                // call ad's expand-animation function
+                myFT.richloads.richloadExpand.frame.contentWindow.Animation.expand();
+            }
+        });
+
+        // handle contract
+        myFT.on('contract', function () {
+            // call ad's collapse-animation function, and hide ad on complete
+            myFT.richloads.richloadExpand.frame.contentWindow.Animation.collapse(function () {
+                richloadExpand[0].style.display = "none";
+            });
+        });
+    </script>
+</body>
+
+</html>
