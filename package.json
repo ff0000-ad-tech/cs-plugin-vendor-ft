@@ -4,7 +4,7 @@
 		"access": "public"
 	},
 	"version": "1.0.0",
-	"description": "Creative Server Plugin - Vendor Flashtalking ===============",
+	"description": "Creative Server Plugin - Vendor Flashtalking",
 	"main": "index.js",
 	"scripts": {
 		"pub": "np"
