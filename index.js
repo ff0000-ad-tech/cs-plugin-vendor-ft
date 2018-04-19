@@ -14,7 +14,7 @@ switch (argv.cmd) {
 		log('targets:', targets)
 		const folders = JSON.parse(argv.folders)
 		log('folders:', folders)
-		packager.createVendorPackage(argv.profile, folders, targets)
+		packager.createVendorPackage(argv.profile, argv.context, folders, targets)
 		break
 }
 
